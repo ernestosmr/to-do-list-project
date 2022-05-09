@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do List || Project</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    
+    <div class="div-error invisible" id="div-error">Add a task and a date</div>
+    <header>
+        <h1>To-do List APP</h1>
+    </header>
+    <main>
+        <form name="taskForm" action="">
+            <label for="content-task">Add new task
+                <input name="inputbox" type="text" id="content-task" placeholder="Study French Language">
+            </label>
+            <input name="inputdate" type="time" id="date-task">
+            <button type="button" onclick="testResults(this.form)">Add</button> 
+        </form>
+        <section class="main-task-container" id="taskContainer">
+            <!-- <article class="task-contain checked">
+                <h2>Learn English</h2>
+                <p>13:50</p>
+                <input type="checkbox" id="">
+            </article> -->
+        </section>
+    </main>
+    <footer>
+        <p>Made by <a href="#">@safoi</a></p>
+    </footer>
+    <script src="./src/index.js"></script>
 </body>
 </html>
