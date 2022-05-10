@@ -1,24 +1,13 @@
 
 const mainSection = document.getElementById('taskContainer')
-const inputCheckBox = []
-const id = []
 let taskNumber = 0;
+const inputCheckBox = []
 function errorInput(){
     const errorDiv = document.getElementById('div-error')
     errorDiv.classList.remove('invisible')
     setTimeout(() =>{
         errorDiv.classList.add('invisible')
     }, 2000)
-}
-
-function inputChecked(){
-    inputCheckBox[inputCheckBox.length - 1].addEventListener('click', () => {
-        if(inputCheckBox[inputCheckBox.length - 1].checked){
-            document.getElementById(id[id.length - 1]).classList.add('checked');
-        }else{
-            console.log('still working')
-        }
-    })
 }
 
 function testResults (form){
@@ -39,14 +28,17 @@ function testResults (form){
     article.appendChild(title)
     article.appendChild(p)
     article.appendChild(inputCheck)
-    mainSection.appendChild(article)
     title.textContent = testInput
     p.textContent = testDate
+    mainSection.appendChild(article)
     inputCheckBox.push(inputCheck)
-    id.push({
-        id: taskNumber
+    inputCheck.addEventListener('click', () => {
+        if(inputCheck.checked){
+            article.classList.add('checked')
+        } else{
+            article.classList.remove('checked')
+        }
     })
-    inputChecked();
     form.reset()   
 }
 
