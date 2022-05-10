@@ -38,6 +38,9 @@ main .main-task-container{
     display: flex;
     align-items: center;
     width: fit-content;
+    position: relative;
+
+    animation-duration: 1s
 }
 .task-contain p{
     margin-inline: 10px;
@@ -50,4 +53,26 @@ main .main-task-container{
 }
 .invisible{
     display: none
+}
+#div-error{
+    position: absolute;
+    top: 30px;
+    padding: 10px;
+    background-color: yellow;
+    border: 1px solid black;
+    font-size: 1.5rem;
+}
+.delete-btn{
+    position: absolute;
+    right: 0;
+    transform: translateX(30px);
+}
+
+@keyframes delete {
+    0%{
+        right: 0px;
+    }
+    100%{
+        right: 220px;
+    }
 }
